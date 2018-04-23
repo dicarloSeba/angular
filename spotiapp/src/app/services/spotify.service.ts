@@ -3,16 +3,16 @@ import {HttpClient,HttpHeaders} from '@angular/common/http';
 import 'rxjs/add/operator/map';
 @Injectable()
 export class SpotifyService {
-  artistas:any[]=[];
+  public artistas:any[]=[];
 
   constructor(public http: HttpClient) {
       console.log("Servicio listo para usuar.")
    }
-   getArtistas(){
-     let url='https://api.spotify.com/v1/search?query=Metallica&type=artist&limit=20';
+   getArtistas(artistas:string){
+     let url=`https://api.spotify.com/v1/search?query=${artistas}&type=artist&limit=20`;
 
      let headers=new HttpHeaders({
-       'authorization': 'Bearer BQDlqGqzaObNY_LxSQtGWYa1_lKM7N-q6BZ1a8kwA900kpptw_Dewn1bA308jQHhPwR0pcL2_DQAzwl2q78'
+       'authorization': 'Bearer BQB7c7jtS7xH6j6prQqiCCGAKQ3uhpGot3LY9eyk-wdFJof4117UaUIoYKT_DKovzDzk694wGxHnSEIzFS0'
       });
 
       return this.http.get(url,{ headers })
