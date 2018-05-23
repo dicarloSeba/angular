@@ -12,7 +12,7 @@ export class SpotifyService {
      let url=`https://api.spotify.com/v1/search?query=${artistas}&type=artist&limit=20`;
 
      let headers=new HttpHeaders({
-       'authorization': 'Bearer BQBBbYcVj1iLsvnLS7cqmnXc4-izTQo7E20cgf6-6zfyNLBjvbmzYQXE0oaF5Ldkf7uBbxcK9UYaNbMqmbg'
+       'authorization': 'Bearer BQC32q3ZVNUfytWDWzZwnBphTd4NGZnQxW-7_p_qBYpSpWKFbE-cnAQM4wy9lOFp3lNEKPcIo2LznuWpWHc'
       });
 
       return this.http.get(url,{ headers })

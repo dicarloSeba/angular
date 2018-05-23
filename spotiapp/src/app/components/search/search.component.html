@@ -6,18 +6,14 @@
         (keyup)="buscarArtistas()"
         [(ngModel)]="termino">
     </div>
-    <div class="col-md-9" *ngIf="termino.length>0">
+    <div class="col-md-9" *ngIf="termino.length>1">
       <h1 class="text-capitalize">{{termino}}</h1>
       <hr>
-      <ul>
-        <li *ngFor="let artista of _spotify.artistas ">
-          {{artista.name}}
-        </li>
-      </ul>
       <div class="row">
         <div class="col-md-3 text-center puntero"
             *ngFor="let artista of _spotify.artistas ">
-          <img class="img-thumbnail" [src]="artista.images || sinfoto">
+          <img class="img-thumbnail" [src]="artista.images | sinfoto">
+          <p>{{artista.name}}</p>
         </div>
       </div>
     </div>
