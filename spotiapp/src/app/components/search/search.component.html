@@ -11,9 +11,10 @@
       <hr>
       <div class="row">
         <div class="col-md-3 text-center puntero"
-            *ngFor="let artista of _spotify.artistas ">
+            *ngFor="let artista of _spotify.artistas "
+            [routerLink]="['/artist',artista.id]">
           <img class="img-thumbnail" [src]="artista.images | sinfoto">
-          <p>{{artista.name}}</p>          
+          <p>{{artista.name}}</p>
         </div>
       </div>
     </div>
