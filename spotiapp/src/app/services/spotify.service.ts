@@ -35,4 +35,13 @@ export class SpotifyService {
                       return this.artistas;
                 });
     }
+
+    getNewReleases(){
+      let url=`${this.urlSpotify}browse/new-releases?limit=20`
+      let headers=this.getHeaders();
+      return this.http.get(url,{ headers })
+            .subscribe(data =>{
+            console.log(data);
+          });
+    }
 }
