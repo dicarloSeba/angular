@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 export class SpotifyService {
   public artistas:any[]=[];
   urlSpotify:string='https://api.spotify.com/v1/';
-  tokenSpotify:string='BQDrmn2DJL41xSFQtqzXlzXQccGeWYVzGCkXTLJEN3kTckgwuZDrkmGzt5EJ_OsNgY3yYQThAynVEqRneAI';
+  tokenSpotify:string='BQA8w-I8WsuM803xcM_E82YhAIjLPyvsQg_RWkyVqoz0vpBoU6YElllwvp12dzxdYiVyNSjnZ3sHWJv4CSQ';
 
   getHeaders():HttpHeaders{
     let headers= new HttpHeaders({
@@ -39,9 +39,6 @@ export class SpotifyService {
     getNewReleases(){
       let url=`${this.urlSpotify}browse/new-releases?limit=20`
       let headers=this.getHeaders();
-      return this.http.get(url,{ headers })
-            .subscribe(data =>{
-            console.log(data);
-          });
+      return this.http.get(url,{ headers });
     }
 }
