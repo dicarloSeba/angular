@@ -9,15 +9,16 @@
     <div class="col-md-9" *ngIf="termino.length>1">
       <h1 class="text-capitalize">{{termino}}</h1>
       <hr>
-      <div class="row">
-        <div class="col-md-3 text-center puntero"
+      <div class="card-columns">
+        <div class="card puntero"
             *ngFor="let artista of _spotify.artistas "
             [routerLink]="['/artist',artista.id]">
-          <img class="img-thumbnail" [src]="artista.images | sinfoto">
-          <p>{{artista.name}}</p>
+          <img class="card-img-top" [src]="artista.images | sinfoto">
+          <div class="card-body">
+            <h5 class="card-title">{{artista.name}}</h5>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
 </div>

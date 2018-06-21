@@ -5,13 +5,14 @@ import 'rxjs/add/operator/map';
 export class SpotifyService {
   public artistas:any[]=[];
   urlSpotify:string='https://api.spotify.com/v1/';
-  tokenSpotify:string='BQASvibE0lOmv-B5GC-Ko0yRaCIE1ZxE9L6Pi238V1OolzbVFSFj_choycYBvY36-9XeArjRq24nABQKQWg';
+  tokenSpotify:string='BQCasbRf6km8Sjg2X9REzgjM1UC1p0ux8b-eYQvT77UkpO4dzC9uyJPxDlxVOF-HlE3NND9hODycrRJGZf0';
 
-  getHeaders():HttpHeaders{
-    let headers= new HttpHeaders({
+  getQuery(query:string){
+    const url=`https://api.spotify.com/v1/${query}`;
+    const headers= new HttpHeaders({
           'authorization': 'Bearer '+this.tokenSpotify
          });
-         return headers;
+    return this.http.get(url, { headers });
   }
 
   constructor(public http: HttpClient) {
@@ -19,17 +20,11 @@ export class SpotifyService {
    }
 
    getArtista(id:string){
-     let url=`${this.urlSpotify}artists/${id}`;
-
-     let headers=this.getHeaders();
-      return this.http.get(url,{ headers });
+      return this.getQuery(`artists/${id}`);
     }
 
    getArtistas(artistas:string){
-     let url=`${this.urlSpotify}search?query=${artistas}&type=artist&limit=20`;
-
-     let headers=this.getHeaders();
-      return this.http.get(url,{ headers })
+      return this.getQuery(`search?query=${artistas}&type=artist&limit=20`)
                 .map((resp) =>{
                       this.artistas=resp['artists'].items;
                       return this.artistas;
@@ -37,9 +32,7 @@ export class SpotifyService {
     }
 
     getNewReleases(){
-      let url=`${this.urlSpotify}browse/new-releases?limit=20`
-      let headers=this.getHeaders();
-      return this.http.get(url,{ headers })
+      return this.getQuery('browse/new-releases?limit=20')
               .map(data=>{
                   return data['albums'].items;
                 });

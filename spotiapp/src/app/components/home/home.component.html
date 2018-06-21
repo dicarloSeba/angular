@@ -1,3 +1,16 @@
+<app-loading></app-loading>
+<div class="card-columns">
+  <div class="card" *ngFor="let cancion of nuevasCanciones">
+    <img class="card-img-top" [src]="cancion.images | sinfoto">
+    <div class="card-body">
+      <h5 class="card-title">{{ cancion.name }}</h5>
+      <p class="card-text">
+        <span *ngFor="let artista of cancion.artists" class="badge badge-pill badge-primary">{{ artista.name }}</span>
+      </p>
+    </div>
+  </div>
+</div>
+
 <!--<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -44,14 +57,3 @@
   </div>
 </div>
 -->
-<div class="card-columns">
-  <div class="card" *ngFor="let cancion of nuevasCanciones">
-    <img class="card-img-top" [src]="cancion.images | sinfoto">
-    <div class="card-body">
-      <h5 class="card-title">{{ cancion.name }}</h5>
-      <p class="card-text">
-        <span *ngFor="let artista of cancion.artists" class="badge badge-pill badge-primary">{{ artista.name }}</span>
-      </p>
-    </div>
-  </div>
-</div>
