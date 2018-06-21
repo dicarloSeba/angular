@@ -1,5 +1,5 @@
-<app-loading></app-loading>
-<div class="card-columns">
+<app-loading *ngIf="loading"></app-loading>
+<div class="card-columns animated fadeIn">
   <div class="card" *ngFor="let cancion of nuevasCanciones">
     <img class="card-img-top" [src]="cancion.images | sinfoto">
     <div class="card-body">
