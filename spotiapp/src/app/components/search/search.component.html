@@ -10,7 +10,7 @@
       <h1 class="text-capitalize">{{termino}}</h1>
       <hr>
         <app-loading *ngIf="loading" class="m-5"></app-loading>
-      <div class="card-columns" *ngIf="!loading">
+      <div class="card-columns animated fadeIn" *ngIf="!loading">
         <div class="card puntero"
             *ngFor="let artista of _spotify.artistas "
             [routerLink]="['/artist',artista.id]">

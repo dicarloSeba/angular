@@ -1,0 +1,9 @@
+<input #termino type="text" (keyup)="getArtist(termino.value)">
+<div class="card-columns md-col-2">
+    <div class="card" *ngFor="let artista of artists">
+        <img [src]="artista.images[0].url" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{ artista.name }}</h5>
+        </div>
+    </div>
+</div>

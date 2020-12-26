@@ -16,6 +16,7 @@ import {NavbarComponent} from './components/shared/navbar/navbar.component';
 import { SinfotoPipe } from './pipes/sinfoto.pipe';
 import { ArtistComponent } from './components/artist/artist.component';
 import { LoadingComponent } from './components/shared/loading/loading.component';
+import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
 
 @NgModule({
 
@@ -26,7 +27,8 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
     NavbarComponent,
     SinfotoPipe,
     ArtistComponent,
-    LoadingComponent
+    LoadingComponent,
+    TarjetasComponent
   ],
   imports: [
     BrowserModule,

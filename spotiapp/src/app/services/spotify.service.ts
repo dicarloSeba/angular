@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 export class SpotifyService {
   public artistas:any[]=[];
   urlSpotify:string='https://api.spotify.com/v1/';
-  tokenSpotify:string='BQBFCM6HqCcOx5QOF-3TAsKzFfUOp_lF3-IZvaJB3riN5Bo4oD7hzBHliIFJfDog-Ms2O16oggIn6_ItbCU';
+  tokenSpotify:string='BQA2seAB3IytpaA4nTyNplCfkFfk8zUroosVf5Iz1PurCIs19mgwUYjo6TIcNpxUFXEXSCuwVmijVthbJAQ';
 
   getQuery(query:string){
     const url=`https://api.spotify.com/v1/${query}`;

@@ -1,0 +1,116 @@
+<div>
+    <h1 class="mt-5">Pipes <small>de Angular</small> </h1>
+    <hr>
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Variable</th>
+                        <th>Pipe</th>
+                        <th>Resultado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ nombre2 }}</td>
+                        <td>capitalizado</td>
+                        <td>{{ nombre2 | capitalizado: false }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ heroe }}</td>
+                        <td>uppercase</td>
+                        <td>{{ heroe | uppercase }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ heroe }}</td>
+                        <td>lowercase</td>
+                        <td>{{ heroe | lowercase }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ nombre }}</td>
+                        <td>slice:3</td>
+                        <td>{{ nombre | slice:3 }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ nombre }}</td>
+                        <td>slice:3:4</td>
+                        <td>{{ nombre | slice:3:5 }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ pi }}</td>
+                        <td>number:'3.2-2'</td>
+                        <td>{{ pi | number:'3.2-2' }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ salario }}</td>
+                        <td>currency:'ARS':'symbol-narrow':'1.2-2' </td>
+                        <td>{{ salario | currency:'ARS':'symbol-narrow':'1.2-2' }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ salario2 }}</td>
+                        <td>currency:'ARS':'symbol-narrow':'4.2-2' </td>
+                        <td>{{ salario2 | currency:'ARS':'symbol-narrow':'4.2-2' }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ porcentaje }}</td>
+                        <td>percent:'4.2-3' </td>
+                        <td>{{ porcentaje| percent:'4.2-3' }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ porcentaje }}</td>
+                        <td>percent:'3.5-6' </td>
+                        <td>{{ porcentaje | percent:'3.5-6' }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ fecha }}</td>
+                        <td>fecha | date </td>
+                        <td>{{ fecha | date: 'dd/MM/yyyy'}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ fecha }}</td>
+                        <td>fecha | date: 'longDate' :{{idioma}}
+                            <hr>
+                            <button (click)="idioma='es'" class="mr-1 btn btn-primary ">Español</button>
+                            <button (click)="idioma='fr'" class="mr-1 btn btn-info ">Francés</button>
+                            <button (click)="idioma='en'" class="mr-1 btn btn-warning ">Inglés</button>
+                        </td>
+
+                        <td>{{ fecha | date: 'longDate':'':idioma}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ nombre }}</td>
+                        <td>
+                            <button class="btn btn-outline-primary" (click)="activar = !activar">Activar | Desactivar                                
+                            </button>
+                        </td>
+                        <td>{{ nombre | contrasena:activar}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <hr>
+    <h3>JSON</h3>
+    <hr>
+    <div class="row mb-5 ">
+        <div class="col "><pre>{{persona}}</pre></div>
+        <div class="col "><pre>persona | json</pre></div>
+        <div class="col "><pre>{{ persona | json }}</pre></div>
+    </div>
+    <h3>ASYNC</h3>
+    <hr>
+    <div class="row mb-5 ">
+        <div class="col "><pre>{{valorPromesa}}</pre></div>
+        <div class="col "><pre>valorPromesa | async</pre></div>
+        <div class="col "><pre>{{ valorPromesa | async }}</pre></div>
+    </div>
+    <h3 clas="mt-4">Dom Seguro
+    </h3>
+    <div class="row mb-3">
+        <div class="col">
+            <iframe width="560 " height="315 " [src]="urlSeguro | domseguro " frameborder="0 " allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture " allowfullscreen></iframe>
+        </div>
+
+    </div>
+</div>
